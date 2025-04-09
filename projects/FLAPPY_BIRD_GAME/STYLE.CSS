@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    background-color: skyblue;
+}
+
+#game-container {
+    width: 400px;
+    height: 600px;
+    border: 2px solid black;
+    margin: 50px auto;
+    position: relative; /* For absolute positioning of elements within */
+    overflow: hidden; /*Prevent the pipes from showing out of the container*/
+}
+
+#bird {
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+    position: absolute;
+    top: 250px;
+    left: 100px;
+    border-radius: 50%;
+}
+
+.pipe {
+    width: 50px;
+    background-color: green;
+    position: absolute;
+}
+
+.pipe-top {
+    bottom: 300px;
+}
+
+pipe-bottom {
+    top: 300px;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}

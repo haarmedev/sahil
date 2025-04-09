@@ -1,0 +1,62 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #faf8ef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    color: #776e65;
+}
+
+#gameContainer {
+    position: relative;
+    background: #bbada0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px);
+    gap: 10px;
+    background: #cdc1b4;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.grid-cell {
+    background: #ccc0b3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #776e65;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+}
+
+.grid-cell-2 { background: #eee4da; color: #776e65; }
+.grid-cell-4 { background: #ede0c8; color: #776e65; }
+.grid-cell-8 { background: #f2b179; color: #f9f6f2; }
+.grid-cell-16 { background: #f59563; color: #f9f6f2; }
+.grid-cell-32 { background: #f67c5f; color: #f9f6f2; }
+.grid-cell-64 { background: #f65e3b; color: #f9f6f2; }
+.grid-cell-128 { background: #edcf72; color: #f9f6f2; }
+.grid-cell-256 { background: #edcc61; color: #f9f6f2; }
+.grid-cell-512 { background: #edc850; color: #f9f6f2; }
+.grid-cell-1024 { background: #edc53f; color: #f9f6f2; }
+.grid-cell-2048 { background: #edc22e; color: #f9f6f2; }
+
+#score {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #776e65;
+}

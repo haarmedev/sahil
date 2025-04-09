@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Voice Button</title>
+<style>
+  .voice-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+
+  .voice-button:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+  }
+
+  /* Optional: Add a microphone icon using Unicode or an image */
+  .voice-button::before {
+    content: "\1F3A4"; /* Unicode for microphone */
+    margin-right: 8px; /* Space between icon and text */
+  }
+</style>
+</head>
+<body>
+
+<button class="voice-button" id="voiceButton">Start Voice Input</button>
+
+<script>
+  const voiceButton = document.getElementById('voiceButton');
+
+  if ('webkitSpeechRecognition' in window) {
+    const recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US'; // Set language
+
+    recognition.onresult = function(event) {
+      const transcript = event.results[0][0].transcript;
+      alert('You said: ' + transcript); // Display the result
+      // You can do something with the transcript here, like sending it to a server or displaying it on the page.
+    };
+
+    recognition.onerror = function(event) {
+      console.error('Speech recognition error:', event.error);
+      alert('Speech recognition error. Please try again.');
+    };
+
+    voiceButton.addEventListener('click', function() {
+      recognition.start();
+    });
+  } else {
+    voiceButton.textContent = 'Speech recognition not supported';
+    voiceButton.disabled = true;
+  }
+</script>
+
+</body>
+</html>
